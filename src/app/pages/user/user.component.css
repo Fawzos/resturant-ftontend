@@ -1,0 +1,14 @@
+.container-fluid{
+    height: 90vh;
+    background-image: url('src/assets/images/WhatsApp Image 2022-04-27 at 1.19.40 PM.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+.row
+{
+    height: 100%;
+}
+.col-10{
+    background-color: #000000a1;
+
+}

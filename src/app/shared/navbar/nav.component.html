@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand text-capitalize" href="" *ngIf="!this.global.loggedin">restaurant website</a>
+      <a class="navbar-brand text-capitalize" routerLink="/profile" *ngIf="this.global.loggedin">welcome {{user1.name}}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+          </li>
+          <li class="nav-item" *ngIf="this.global.loggedin">
+            <a class="nav-link" routerLink="register">register</a>
+          </li>
+          <li class="nav-item" *ngIf="!this.global.loggedin">
+            <a class="nav-link" routerLink="/login">login</a>
+          </li>
+          <li class="nav-item" *ngIf="this.global.loggedin">
+            <a class="nav-link" (click)="logOut()">logOut</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

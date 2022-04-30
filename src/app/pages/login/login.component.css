@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+
+.row{
+    height: 91.5vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('src/assets/images/WhatsApp Image 2022-04-27 at 1.19.40 PM.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+.error{
+    height: 30px;
+}
+.col-4{
+    background-color: #000000a1;
+    padding: 30px;
+}

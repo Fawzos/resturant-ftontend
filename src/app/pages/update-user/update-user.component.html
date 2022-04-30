@@ -1,0 +1,46 @@
+
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-5">
+            <form [formGroup]="userData" (ngSubmit)="updateUser()" class="p-5 rounded shadow">
+                <h2 class="text-center text-danger">Edit User</h2>
+                <div>
+                    <input type="text" placeholder="Name" class="form-control" formControlName="name">
+                    <div class="err"></div>
+                </div>
+                <div>
+                    <input type="text" placeholder="birthday" class="form-control" formControlName="birthDate" >
+                    <div class="err">
+                        <div *ngIf="birthDate?.errors?.['min'] && submit" class="text-danger">
+                            min age is 18
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" placeholder="Email" class="form-control" formControlName="email">
+                    <div class="err">
+                        <div *ngIf="email?.errors?.['email'] && submit" class="text-danger">
+                            invalid email format
+                        </div>
+                        <div *ngIf="errors?.email && submit" class="text-danger">
+                            {{errors?.email}}
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" placeholder="phone" class="form-control" formControlName="phone">
+                    <div class="err">
+                        <div *ngIf="errors?.phone && submit" class="text-danger">
+                            {{errors?.phone}}
+                        </div>
+                        <!-- <div *ngIf="phone?.errors?.['pattern'] ">
+                            invalid phone format
+                        </div> -->
+                    </div>
+                    </div>
+                <button class="btn btn-primary">update</button>
+            </form>
+
+        </div>
+    </div>
+</div>

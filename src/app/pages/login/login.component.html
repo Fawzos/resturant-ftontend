@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-4 rounded">
+            <h2 class="text-center text-danger">LOGIN FORM</h2>
+            <form [formGroup]="userData" (ngSubmit)="handleSubmit()">
+                <input type="text" class="form-control" name="email" formControlName="email" placeholder="Email">
+                <div class="error">
+                    <div class="text-danger" *ngIf="email?.invalid && isSubmit">
+                        <!-- {{phone?.errors| json}} -->
+                        <div *ngIf="email?.errors?.['required']">
+                            email is required
+                        </div>
+                        <div *ngIf="email?.errors?.['email']">
+                            invalid Email format 
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="password" class="form-control" name="password" formControlName="password" placeholder="Password">
+                </div>
+                <div class="error">
+                    <div class="text-danger" *ngIf="password?.invalid && isSubmit">
+                        <!-- {{phone?.errors| json}} -->
+                        <div *ngIf="password?.errors?.['required']">
+                            phone is required
+                        </div>
+                    </div>
+                    <div *ngIf="invalid">
+                        <p class="text-warning">invalid email or password </p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <button class="btn btn-danger px-5 py-2 " type="submit">LOGIN</button>
+                    </div>
+                    <div >
+                        <button class="btn btn-danger px-3 py-2 " type="submit">CONTINUE AS A GUEST</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

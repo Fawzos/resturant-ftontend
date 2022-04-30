@@ -1,0 +1,18 @@
+<div class="main">
+     
+    <div class="containerMe" *ngIf="categories.length !=0; else noCategory">
+        <div class="category" *ngFor="let category of categories">
+            <img src="../../../assets/images/sssss.jpeg" alt="">
+            <h3>{{category.title}}</h3>
+            <p>{{category.description}}</p>
+            <button routerLink="/categories/{{category._id}}"  class="btn btn-warning">Show Category</button>
+        </div>
+    </div>
+</div>
+<ng-template #noCategory>
+    
+    <div class="container mt-5">
+        <div class="alert alert-danger">No Categories Yet!</div>
+    </div>
+    
+</ng-template>

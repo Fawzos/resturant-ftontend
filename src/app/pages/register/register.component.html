@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <form #register="ngForm" (ngSubmit)="func(register)" class="col-10 col-md-4">
+            <!-- <div class="alert alert-danger">
+                values {{register.value | json}} <br>
+                valid {{register.valid}} <br>
+                invalid {{register.invalid}} <br>
+                touched {{register.touched}} <br>
+                submit {{register.submitted}} <br>
+            </div> -->
+            <div class="">
+                <div>
+                    <input class="form-control" type="text" name="name" placeholder="name" [(ngModel)]="model.name" #name="ngModel" >
+                    <!-- <div class="aletr alert-danger" *ngIf="name.errors?.['required'] && register.submitted">
+                        <p>name is required</p>
+                    </div> -->
+                    <div class="err">
+                        <p class="text-danger" *ngIf="register.submitted && errors.name">{{errors.name.message}}</p>
+                    </div>
+                </div>
+                <div class="">
+                    <div>
+                        <input class="form-control" type="email" name="email" placeholder="email" [(ngModel)]="model.email" #email="ngModel"  >
+                        <!-- <div class="aletr alert-danger" *ngIf="email.errors?.['required'] && register.submitted">
+                            <p>email is required</p>
+                        </div> -->
+                        <div class="err">
+                            <p class="text-danger" *ngIf="register.submitted && errors.email">{{errors.email.message}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <input class="form-control" type="password" name="password" placeholder="password" [(ngModel)]="model.password" #password="ngModel" required>
+                        <!-- <div class="aletr alert-danger" *ngIf="password.errors?.['required'] && register.submitted">
+                            <p>password is required</p>
+                        </div> -->
+                        <div class="err">
+                            <p class="text-danger" *ngIf="register.submitted && errors.password">{{errors.password.message}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div>
+                        <input class="form-control" type="date" name="date" placeholder="age" [(ngModel)]="model.birthDate" #birthDate="ngModel" >
+                        <!-- <div class="aletr alert-danger" *ngIf="age.errors?.['required'] && register.submitted">
+                            <p>age is required</p>
+                        </div> -->
+                        <div class="err">
+                            <p class="text-danger" *ngIf="register.submitted && errors.age">{{errors.age.message}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div>
+                        <input class="form-control" type="text" name="phone" placeholder="phone" [(ngModel)]="model.phone" #num="ngModel" >
+                        <div class="err">
+                            <p class="text-danger" *ngIf="register.submitted && errors.phone">{{errors.phone.message}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div>
+                        <button class="btn btn-primary w-50 " type="submit">submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</div>
